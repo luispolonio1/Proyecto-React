@@ -1,0 +1,30 @@
+.card{
+    color:#fff;
+    font-weight: lighter;
+}
+
+.fondo{
+    background-color:#202020;
+}
+.color-verde{
+    background-color: green;
+}
+.color-rojo{
+    background-color: red;
+}
+
+.columna{
+    display:flex;
+    flex-direction: column;
+    background-color: rgb(106, 106, 254);
+    width:240px;
+}
+ .margin{
+    margin: 10px;
+    width:200px;
+ }
+
+ .fondo2{
+    background-color: greenyellow;
+    color: #fff;
+ }
