@@ -5,7 +5,8 @@ import {TaksC} from "./taks"
 const root = ReactDom.createRoot(document.getElementById("root"))
 
 root.render(<>
-<TaksC ready={true}/>
+
+
 </>
 )
 
