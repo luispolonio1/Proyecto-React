@@ -14,7 +14,7 @@ const Login = ({ setUsername }) => {
     };
 
     return (
-        <div className="container mt-5" style={{background:'#284',color:'white'}}>
+        <div className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-6">
                     <h2>Login</h2>
