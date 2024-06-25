@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Login = () => {
-    const [username, setUsername] = useState('');
+const Login = ({ setUsername }) => {
+    const [usernameInput, setUsernameInput] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-
+        setUsername(usernameInput);
+        navigate('/home');
     };
 
     return (
-        <div className="container mt-5">
+        <div className="container mt-5" style={{background:'#284',color:'white'}}>
             <div className="row justify-content-center">
                 <div className="col-md-6">
                     <h2>Login</h2>
@@ -23,8 +25,8 @@ const Login = () => {
                                 type="text"
                                 className="form-control"
                                 id="username"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
+                                value={usernameInput}
+                                onChange={(e) => setUsernameInput(e.target.value)}
                             />
                         </div>
                         <div className="mb-3">
@@ -37,7 +39,7 @@ const Login = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary" href="./index.html">Iniciar</button>
+                        <button type="submit" className="btn btn-primary">Iniciar</button>
                     </form>
                 </div>
             </div>
@@ -46,3 +48,4 @@ const Login = () => {
 };
 
 export default Login;
+

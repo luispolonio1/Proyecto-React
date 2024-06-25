@@ -1,26 +1,27 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import React from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-{/*import NavDropdown from 'react-bootstrap/NavDropdown';*/ }
 
-export function BarraNavegacion({ name = "Usuario" }) {
+export const BarraNavegacion = ({name}) => {
+  console.log(name)
   return (
-    <Navbar expand="lg" className="body-tertiary" bg='light' data-bs-theme="ligth">
+    <Navbar expand="lg" className="body-tertiary" bg='light' data-bs-theme="light">
       <Container fluid>
         <Navbar.Brand href="#">Blog -SLA</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }} i
+            style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Deportes</Nav.Link>
+            <Nav.Link href="">Deportes</Nav.Link>
             <Nav.Link href="#action2">Tecnologia</Nav.Link>
             <Nav.Link href="#action3">Noticias Mundiales</Nav.Link>
           </Nav>
@@ -34,14 +35,14 @@ export function BarraNavegacion({ name = "Usuario" }) {
             <Button variant="success">Buscar</Button>
           </Form>
           <Nav>
-            <Nav.Link href='#Usuario' style={{ marginRight: '10px' }}><i class="bi bi-person" style={{ fontSize: '30px' }}></i>{name}</Nav.Link>
+            <Nav.Link href='#Usuario' style={{ marginRight: '10px' }}><i className="bi bi-person" style={{ fontSize: '30px' }}></i>{name ? name:'Usuario'}</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
   );
 }
+
 export const Cuerpo = () => {
   const Formulario = () => {
     let imagenArchivo; 
@@ -94,3 +95,16 @@ export const Cuerpo = () => {
     </div>
   );
 };
+
+const Home = ({ username }) => {
+  return (
+    <>
+      <BarraNavegacion name={username} />
+      <Cuerpo />
+    </>
+  );
+};
+
+export default Home;
+
+
