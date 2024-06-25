@@ -43,7 +43,7 @@ export const BarraNavegacion = ({name}) => {
   );
 }
 
-export const Cuerpo = () => {
+export const Cuerpo = ({name}) => {
   const Formulario = () => {
     let imagenArchivo; 
 
@@ -88,7 +88,7 @@ export const Cuerpo = () => {
 
   return (
     <div className="container">
-      <h1>Bienvenido a Blog -SLA</h1>
+      <h1>Bienvenido {name} a Blog -SLA</h1>
       <button className="btn btn-primary" onClick={Formulario}>
         Agregar Blog +
       </button>
@@ -100,7 +100,7 @@ const Home = ({ username }) => {
   return (
     <>
       <BarraNavegacion name={username} />
-      <Cuerpo />
+      <Cuerpo name={username} />
     </>
   );
 };
