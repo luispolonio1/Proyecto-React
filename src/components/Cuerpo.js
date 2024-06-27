@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ContextoBlog } from './contenido';
+
 const Cuerpo = ({ name }) => {
+    const { blogs, setBlogs } = useContext(ContextoBlog)
     const Formulario = () => {
         let imagenArchivo;
-
         Swal.fire({
             title: 'Estructura Del Blog',
             confirmButtonText: "Crear Blog",
@@ -23,24 +24,24 @@ const Cuerpo = ({ name }) => {
       `,
             focusConfirm: false,
             preConfirm: () => {
+                const Categoria = document.getElementById('Categoria').value;
                 const Titulo = document.getElementById('swal-input1').value;
                 const Informacion = document.getElementById('swal-input2').value;
                 const fileInput = document.getElementById('swal-input3');
                 const Imagen = fileInput.files[0];
-
-                if (!Titulo || !Informacion || !Imagen) {
-                    Swal.showValidationMessage('Por favor, completa todos los campos');
+                if (!Categoria || !Titulo || !Informacion || !Imagen) {
+                    Swal.showValidationMessage('Por favor, completa todos los campos')
                     return false;
                 }
                 imagenArchivo = Imagen;
-
-                return { Titulo, Informacion, Imagen: fileInput.value };
+                return { Categoria, Titulo, Informacion, Imagen: fileInput.value };
             }
         }).then((result) => {
             if (result.isConfirmed) {
-                const { Titulo, Informacion, Imagen } = result.value;
+                const { Categoria, Titulo, Informacion, Imagen } = result.value;
                 console.log('Archivo de imagen:', imagenArchivo);
-
+                const nuevoBlog = { Categoria, Titulo, Informacion, Imagen: URL.createObjectURL(imagenArchivo) };
+                setBlogs([...blogs, nuevoBlog]);
                 Swal.fire({
                     title: 'Blog Creado',
                     icon: 'success',
