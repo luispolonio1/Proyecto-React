@@ -29,4 +29,12 @@
     color: #fff
  }
 
- 
+ .borderHover:hover{
+    outline: solid 2px rgb(2, 33, 91);
+    background-color:rgb(124, 164, 221) ;
+    color: black;
+ }
+ .borderHover{
+    margin:10px;
+    font-weight: bolder;
+ }
