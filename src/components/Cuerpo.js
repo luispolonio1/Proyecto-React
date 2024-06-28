@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { ContextoBlog } from './contenido';
 
 const Cuerpo = ({ name }) => {
@@ -20,7 +21,8 @@ const Cuerpo = ({ name }) => {
               </select>
         <input type="text" id="swal-input1" class="swal2-input" placeholder="Titulo" style='width:410px; margin-left:0;'>
         <input type="file" id="swal-input3" class="swal2-input" style='width:410px; margin-left:0;'>
-        <textarea id="swal-input2" class="swal2-input" placeholder="Informacion" style='width:450px; margin-top:10px;'></textarea>
+        <textarea id="swal-input2" class="swal2-input" placeholder="Parrafo 1" style='width:450px; margin-top:10px;'></textarea>
+        <textarea id="swal-input4" class="swal2-input" placeholder="Parrafo 2" style='width:450px; margin-top:10px;'></textarea>
       `,
             focusConfirm: false,
             preConfirm: () => {
@@ -53,11 +55,40 @@ const Cuerpo = ({ name }) => {
     };
 
     return (
-        <div className="container">
-            <h1>Bienvenido {name} a Blog -SLA</h1>
-            <button className="btn btn-primary" onClick={Formulario}>
-                Agregar Blog +
-            </button>
+        <div className="container row">
+            <div className='container col-6' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '600px' }}>
+                <div>
+                    <h1>Bienvenido {name ? name : 'Usuario'} a Blog -SLA</h1>
+                    <button className="btn btn-primary" onClick={Formulario}>
+                        Agregar Blog +
+                    </button>
+                </div>
+                <div className='container' style={{ background: '#022', color: 'white' }}>
+                    Descripcion del proyecto
+                </div>
+            </div>
+                <div id="carouselExample" className="carousel slide container col-6">
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <img src="https://elcomercio.pe/resizer/-ff-6d9vg7CILcQh-WvejY7_3lQ=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/6FUBT6XQXNHHNFOMCHIT7I34NA.jpg" className="d-block w-100" alt="..."/>
+                        </div>
+                        <div className="carousel-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5HTH-3D4CWYI4ripc-bvvAB1LAcbOkkiz1A&usqp=CAU" className="d-block w-100" alt="..."/>
+                        </div>
+                        <div className="carousel-item">
+                            <img src="https://depor.com/resizer/dV5TqPnaHmZP6yMI_GfeKL28T6I=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/OCJ6ZQ4G4RHMRGDRYR7UBZQ6PY.jpg" className="d-block w-100" alt="..."/>
+                        </div>
+                    </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
+            </div>
+
         </div>
     );
 };
