@@ -56,7 +56,7 @@ const Cuerpo = ({ name }) => {
 
     return (
         <div className="container row">
-            <div className='container col-6' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '600px' }}>
+            <div className='container col-12  col-lg-6' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '600px' }}>
                 <div>
                     <h1>Bienvenido {name ? name : 'Usuario'} a Blog -SLA</h1>
                     <button className="btn btn-primary" onClick={Formulario}>
@@ -67,7 +67,7 @@ const Cuerpo = ({ name }) => {
                     Descripcion del proyecto
                 </div>
             </div>
-                <div id="carouselExample" className="carousel slide container col-6">
+                <div id="carouselExample" className="carousel slide container col-12 col-lg-6">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <img src="https://elcomercio.pe/resizer/-ff-6d9vg7CILcQh-WvejY7_3lQ=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/6FUBT6XQXNHHNFOMCHIT7I34NA.jpg" className="d-block w-100" alt="..."/>
