@@ -12,7 +12,6 @@ const Login = ({ setUsername }) => {
     setUsername(localUsername);
     navigate('/home');
   };
-
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">

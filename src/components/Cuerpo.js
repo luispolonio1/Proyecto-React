@@ -19,8 +19,8 @@ const Cuerpo = ({ name }) => {
                 <option value="Tecnologia">Tecnologia</option>
                 <option value="Noticias">Noticias Mundiales</option>
               </select>
-        <input type="text" id="swal-input1" class="swal2-input" placeholder="Titulo" style='width:410px; margin-left:0;'>
-        <input type="file" id="swal-input3" class="swal2-input" style='width:410px; margin-left:0;'>
+        <input type="text" id="swal-input1" class="swal2-input" placeholder="Titulo" style='width:410px; margin-left:0;'/>
+        <input type="file" id="swal-input3" class="swal2-input" style='width:410px; margin-left:0;'/>
         <textarea id="swal-input2" class="swal2-input" placeholder="Parrafo 1" style='width:450px; margin-top:10px;'></textarea>
         <textarea id="swal-input4" class="swal2-input" placeholder="Parrafo 2" style='width:450px; margin-top:10px;'></textarea>
       `,

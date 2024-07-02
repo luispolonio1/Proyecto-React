@@ -10,7 +10,7 @@ const Deporte = () => {
     <div className="container-fluid mt-5">
       {deportesBlogs.length === 0 ? (
         <div className="text-center" style={{height:'600px',display:'flex',justifyContent:'center',alignItems:'center'}}>
-          <h1 className="display-1"style={{color:'#555'}} >Aún está vacío</h1>
+          <h1 className="display-1"style={{color:'#555'}} >Aún está vacía esta seccion</h1>
         </div>
       ) : (
         <div className="row row-cols-1 row-cols-md-4 g-4">
