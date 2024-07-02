@@ -88,7 +88,6 @@ const Cuerpo = ({ name }) => {
                         <span className="visually-hidden">Next</span>
                     </button>
             </div>
-
         </div>
     );
 };

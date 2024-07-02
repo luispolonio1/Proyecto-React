@@ -16,7 +16,7 @@ const Login = ({ setUsername }) => {
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <h2>Login</h2>
+          <h1 className="text-center">Login</h1> 
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="username" className="form-label">Usuario</label>
@@ -38,7 +38,9 @@ const Login = ({ setUsername }) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <button type="submit" className="btn btn-primary">Iniciar</button>
+            <div className="d-grid gap-2 col-6 mx-auto">
+              <button type="submit" className="btn btn-outline-secondary">Iniciar</button>
+            </div>
           </form>
         </div>
       </div>
