@@ -23,10 +23,18 @@ const Cuerpo = ({ name }) => {
                 <option value="Tecnologia">Tecnología</option>
                 <option value="Noticias">Noticias Mundiales</option>
               </select>
+<<<<<<< HEAD
               <input type="text" id="swal-input1" class="swal2-input" placeholder="Título" style='width: calc(100% - 20px); margin-top: 10px; margin-bottom: 10px; border-radius: 5px; text-align: center; padding-left: 10px; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;'>
               <input type="file" id="swal-input3" class="swal2-input" style='width: calc(100% - 20px); margin-top: 10px; margin-bottom: 10px; border-radius: 5px; padding-left: 10px; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;'>
               <textarea id="swal-input2" class="swal2-input" placeholder="Informacion del Blog" style='width: 100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;'></textarea>
             `,
+=======
+        <input type="text" id="swal-input1" class="swal2-input" placeholder="Titulo" style='width:410px; margin-left:0;'/>
+        <input type="file" id="swal-input3" class="swal2-input" style='width:410px; margin-left:0;'/>
+        <textarea id="swal-input2" class="swal2-input" placeholder="Parrafo 1" style='width:450px; margin-top:10px;'></textarea>
+        <textarea id="swal-input4" class="swal2-input" placeholder="Parrafo 2" style='width:450px; margin-top:10px;'></textarea>
+      `,
+>>>>>>> 1c9df79e75012e24ade18f2c60a1782d90488687
             focusConfirm: false,
             preConfirm: () => {
                 const Categoria = document.getElementById('Categoria').value;
@@ -95,7 +103,11 @@ const Cuerpo = ({ name }) => {
                         <span className="carousel-control-next-icon" aria-hidden="true"></span>
                         <span className="visually-hidden">Next</span>
                     </button>
+<<<<<<< HEAD
                 </div>
+=======
+            </div>
+>>>>>>> 1c9df79e75012e24ade18f2c60a1782d90488687
         </div>
     );
 };
