@@ -1,10 +1,19 @@
-import React, { useContext, useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ContextoBlog } from './contenido';
 
 const Tecnologia = () => {
-const { blogs } = useContext(ContextoBlog)
-const [blogsel, setblogsel] = useState(null)
+  const [blogs, setBlogs] = useState([]);
+  const [blogsel, setblogsel] = useState(null);
+
+  // Recuperar blogs de localStorage al cargar el componente
+  useEffect(() => {
+      const savedBlogs = localStorage.getItem('blogs');
+      if (savedBlogs) {
+          setBlogs(JSON.parse(savedBlogs));
+      }
+  }, []);
+  
 const tecnologiaBlogs = blogs.filter(blog => blog.Categoria === 'Tecnologia')
 
 return (

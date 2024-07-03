@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -7,12 +7,28 @@ import '../estilos.css'
 import hy1 from '../assets/img/hy1.jpg'
 import hy2 from '../assets/img/hy2.jpg'
 import hy3 from '../assets/img/hy3.jpg'
-
+import { saveAs } from 'file-saver';
 
 const Cuerpo = ({ name }) => {
-    const { blogs, setBlogs } = useContext(ContextoBlog)
+    const { blogs, setBlogs } = useContext(ContextoBlog);
+
+    useEffect(() => {
+        const savedBlogs = localStorage.getItem('blogs');
+        if (savedBlogs) {
+            setBlogs(JSON.parse(savedBlogs));
+        }
+    }, [setBlogs]);
+
+    const convertToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+    };
+
     const Formulario = () => {
-        let imagenArchivo;
         Swal.fire({
             title: 'Estructura Del Blog',
             confirmButtonText: "Crear Blog",
@@ -30,32 +46,30 @@ const Cuerpo = ({ name }) => {
                     <option value="Noticias">Noticias Mundiales</option>
                 </select>
                 <input type="text" id="swal-input1" class="swal2-input" placeholder="Título" style='width:100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px; text-align: center; margin-left:0px; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;'>
-        
                 <input type="file" id="swal-input3" class="swal2-input" style='width:100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px;margin-left:0px;  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;'>
-        
                 <textarea id="swal-input2" class="swal2-input" placeholder="Informacion del Blog" style='width:100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;'></textarea>
-            `
-        ,
+            `,
             focusConfirm: false,
-            preConfirm: () => {
+            preConfirm: async () => {
                 const Categoria = document.getElementById('Categoria').value;
                 const Titulo = document.getElementById('swal-input1').value;
                 const Informacion = document.getElementById('swal-input2').value;
                 const fileInput = document.getElementById('swal-input3');
                 const Imagen = fileInput.files[0];
                 if (!Categoria || !Titulo || !Informacion || !Imagen) {
-                    Swal.showValidationMessage('Por favor, completa todos los campos')
+                    Swal.showValidationMessage('Por favor, completa todos los campos');
                     return false;
                 }
-                imagenArchivo = Imagen;
-                return { Categoria, Titulo, Informacion, Imagen: fileInput.value };
+                const ImagenBase64 = await convertToBase64(Imagen);
+                return { Categoria, Titulo, Informacion, Imagen: ImagenBase64 };
             }
         }).then((result) => {
             if (result.isConfirmed) {
                 const { Categoria, Titulo, Informacion, Imagen } = result.value;
-                console.log('Archivo de imagen:', imagenArchivo);
-                const nuevoBlog = { Categoria, Titulo, Informacion, Imagen: URL.createObjectURL(imagenArchivo) };
-                setBlogs([...blogs, nuevoBlog]);
+                const nuevoBlog = { Categoria, Titulo, Informacion, Imagen };
+                const nuevosBlogs = [...blogs, nuevoBlog];
+                setBlogs(nuevosBlogs);
+                localStorage.setItem('blogs', JSON.stringify(nuevosBlogs));
                 Swal.fire({
                     title: 'Blog Creado',
                     icon: 'success',
