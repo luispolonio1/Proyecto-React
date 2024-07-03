@@ -41,3 +41,17 @@
  .espaciosdiv{
     margin:30px;
  }
+
+ .custom-swal-container .swal2-popup {
+    overflow-x: hidden !important;
+}
+
+.fondoindex{
+    background-color: #000000;
+    color:white;
+    margin-bottom:0px;
+}
+
+.espaciosdiv2{
+    margin-top: 30px;
+}

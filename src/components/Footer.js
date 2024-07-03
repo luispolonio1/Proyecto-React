@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../estilos.css'
 export const Footer =()=>{
-return (<div className="container-fluid col-12">
-    <footer className="row row-cols-1 row-cols-sm-2 row-cols-md-3 py-5 my-5 border-top">
+return (<div className="container-fluid col-12 espaciosdiv2">
+    <footer className="row row-cols-1  row-cols-md-3">
         <div className="col mb-4">
             <h5>Secciones</h5>
             <ul className="nav flex-column">

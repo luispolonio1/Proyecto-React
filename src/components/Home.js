@@ -24,6 +24,7 @@ return (
         <Route path="/blogdetalle" element={<BlogDetalle />} /> {}
        </Routes>
       </div>
+      <hr/>
     <Footer />
   </>
 );
