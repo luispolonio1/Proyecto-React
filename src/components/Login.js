@@ -17,7 +17,7 @@ const Login = ({ setUsername }) => {
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <h1 className="text-center">Login</h1> 
+          <h1 className="text-center">Iniciar Sesión</h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="username" className="form-label">Usuario</label>
@@ -40,7 +40,7 @@ const Login = ({ setUsername }) => {
               />
             </div>
             <div className="d-grid gap-2 col-6 mx-auto">
-              <button type="submit" className="btn btn-outline-secondary">Iniciar</button>
+              <button type="submit" className="btn btn-outline-secondary">Iniciar Sesión</button>
             </div>
           </form>
         </div>

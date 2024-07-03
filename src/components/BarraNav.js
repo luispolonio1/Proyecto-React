@@ -4,12 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import '../estilos.css'
+import '../estilos.css';
+
 export const BarraNavegacion = ({ name }) => {
   return (
-    <Navbar expand="lg" className="body-tertiary sticky-top" bg='dark' data-bs-theme="dark">
+    <Navbar expand="lg" className="body-tertiary sticky-top" bg='dark' variant='dark'>
       <Container fluid>
-        <NavLink to="Cuerpo" className="nav-link"><h2 style={{color:'white'}}>Blog -SLA</h2></NavLink>
+        <NavLink to="Cuerpo" className="nav-link"><h2 style={{color:'white'}}>SLA BLOG</h2></NavLink>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -17,12 +18,14 @@ export const BarraNavegacion = ({ name }) => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <NavLink to="Deportes" className="nav-link borderHover">Deportes</NavLink>
-            <NavLink to="tecnologia" className="nav-link borderHover">Tecnologia</NavLink>
-            <NavLink to="noticias" className="nav-link borderHover">Noticias Mundiales</NavLink>
+            <NavLink to="Deportes" className="nav-link borderHover">DEPORTES</NavLink>
+            <NavLink to="tecnologia" className="nav-link borderHover">TECNOLOGIA</NavLink>
+            <NavLink to="noticias" className="nav-link borderHover">NOTICIAS MUNDIALES</NavLink>
           </Nav>
           <Nav>
-            <Nav.Link href='#Usuario' style={{ marginRight: '10px',color:'white',fontSize:'25px'}}><i className="bi bi-person" style={{ fontSize: '30px' }}></i>{name ? name : 'Usuario'}</Nav.Link>
+          <Nav.Link href='#Usuario' style={{ marginRight: '10px', color: 'white', fontSize: '25px', fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif' }}>
+              <i className="bi bi-person" style={{ fontSize: '30px' }}></i>{name ? name : 'Usuario'}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
