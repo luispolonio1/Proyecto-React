@@ -7,19 +7,11 @@ const { blogs } = useContext(ContextoBlog)
 const [blogsel, setblogsel] = useState(null)
 const deportesBlogs = blogs.filter(blog => blog.Categoria == 'Deportes')
 
-<<<<<<< HEAD
 return (
   <div className="container-fluid mt-5">
       {deportesBlogs.length == 0 ? (
         <div className="text-center" style={{ height: '600px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <h1 className="display-1" style={{ color: '#555' }}>Aún está vacío</h1>
-=======
-  return (
-    <div className="container-fluid mt-5">
-      {deportesBlogs.length === 0 ? (
-        <div className="text-center" style={{height:'600px',display:'flex',justifyContent:'center',alignItems:'center'}}>
-          <h1 className="display-1"style={{color:'#555'}} >Aún está vacía esta seccion</h1>
->>>>>>> 1c9df79e75012e24ade18f2c60a1782d90488687
         </div>
       ) : (
         blogsel ? (
@@ -49,4 +41,3 @@ return (
 };
 
 export default Deporte;
-
