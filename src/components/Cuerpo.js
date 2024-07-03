@@ -89,13 +89,13 @@ const Cuerpo = ({ name }) => {
                         Crear Blog
                     </button>
                 </div>
-                <div className='container' style={{ background: '#fff', color: '#000', fontFamily: 'Arial' }}>
-                    El proyecto SLA BLOG hecho por estudiantes de la Universidad UNEMI es una plataforma diseñada para la creación
-                    y gestión eficiente de blogs, facilitando la publicación de contenidos mediante un editor visual intuitivo,
-                    con enfoque en la personalización y optimización, permite a los usuarios organizar entradas con categorías y
-                    etiquetas, interactuar mediante un sistema de comentarios integrado, y analizar el rendimiento con herramientas
-                    de estadísticas, utilizando tecnologías como React.js, Node.js, MongoDB para la seguridad, SLA BLOG busca mejorar
-                    la visibilidad online y la interacción con la audiencia, garantizando una experiencia de usuario segura y satisfactoria.
+                <div className='container' style={{ color: '#000', fontFamily: 'Arial', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
+                El proyecto SLA BLOG hecho por estudiantes de la Universidad UNEMI es una plataforma diseñada para la creación
+                y gestión eficiente de blogs, facilitando la publicación de contenidos mediante un editor visual intuitivo,
+                con enfoque en la personalización y optimización, permite a los usuarios organizar entradas con categorías y
+                etiquetas, interactuar mediante un sistema de comentarios integrado, y analizar el rendimiento con herramientas
+                de estadísticas, utilizando tecnologías como React.js, Node.js, MongoDB para la seguridad, SLA BLOG busca mejorar
+                la visibilidad online y la interacción con la audiencia, garantizando una experiencia de usuario segura y satisfactoria.
                 </div>
             </div>
             <div id="carouselExample" className="carousel slide container col-12 col-lg-6">

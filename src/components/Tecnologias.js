@@ -1,6 +1,5 @@
 import React, { useState ,useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ContextoBlog } from './contenido';
 
 const Tecnologia = () => {
   const [blogs, setBlogs] = useState([]);
@@ -26,18 +25,18 @@ return (
         blogsel ? (
           <div className="container">
           <button className="btn btn-primary mb-3" onClick={() => setblogsel(null)}>Volver</button>
-          <h2>{blogsel.Titulo}</h2>
-          <img src={blogsel.Imagen} className="img-fluid" alt={blogsel.Titulo} />
+          <h1>{blogsel.Titulo}</h1>
+          <img src={blogsel.Imagen}  alt={blogsel.Titulo} style={{ height: '250px',width:'250px'}}/>
           <p>{blogsel.Informacion}</p>
         </div>
         ) : (
           <div className="row row-cols-1 row-cols-md-4 g-4">
             {tecnologiaBlogs.map((blog, index) => (
               <div className="col" key={index}>
-              <div className="card" onClick={() => setblogsel(blog)}>
-              <img src={blog.Imagen} className="card-img-top" alt={blog.Titulo} style={{ height: '250px' }} />
+              <div className="card" style={{background:'black',height:'220px'}} onClick={() => setblogsel(blog)}>
+              <img src={blog.Imagen} className="card-img-top" alt={blog.Titulo} style={{ height: '170px',width:'298px'}} />
               <div className="card-body">
-              <h4 className="card-title" style={{ color: 'black' }}>{blog.Titulo}</h4>
+              <h4 className="card-title" style={{ color:'white' }}>{blog.Titulo}</h4>
               </div>
               </div>
             </div>

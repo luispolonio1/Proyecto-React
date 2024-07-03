@@ -6,7 +6,6 @@ import Cuerpo from './Cuerpo';
 import Login from './Login';
 import Tecnologia from './Tecnologias';
 import Noticia from './Noticias';
-import BlogDetalle from './infoblog'; 
 import { Footer } from './Footer';
 
 const Home = ({ username }) => {
@@ -21,7 +20,6 @@ return (
         <Route path="/deportes" element={<Deporte />} />
         <Route path="/tecnologia" element={<Tecnologia />} />
         <Route path="/noticias" element={<Noticia />} />
-        <Route path="/blogdetalle" element={<BlogDetalle />} /> {}
        </Routes>
       </div>
       <hr/>
