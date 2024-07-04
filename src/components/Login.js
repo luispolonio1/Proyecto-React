@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import hhhh7 from '../assets/img/hhhh7.jpg';
 
 const Login = ({ setUsername }) => {
   const [localUsername, setLocalUsername] = useState('');
@@ -13,7 +14,13 @@ const Login = ({ setUsername }) => {
     navigate('/home');
   };
   return (
-    <div className="container mt-5">
+    <div style={{ 
+      backgroundImage: `url(${hhhh7})`, 
+      backgroundSize: 'cover', 
+      backgroundPosition: 'center',
+      minHeight: 'calc(101vh - 4px)', 
+      paddingTop: '35px',
+    }} className="container -fluid mt">
       <div className="row justify-content-center">
         <div className="col-md-6">
           <h1 className="text-center">Iniciar Sesión</h1>
