@@ -91,7 +91,7 @@ const Cuerpo = ({ name }) => {
 
 
                 </div>
-                <div className='container' style={{ color: '#001', fontFamily: 'Times New Roman', textShadow: '1px 1px 2px rgba(1, 1, 1, 0s.0)' }}>
+                <div className='container' style={{ color: '#fff', fontFamily: 'Times New Roman', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
                 El proyecto SLA BLOG hecho por estudiantes de la Universidad UNEMI es una plataforma diseñada para la creación
                 y gestión eficiente de blogs, facilitando la publicación de contenidos mediante un editor visual intuitivo,
                 con enfoque en la personalización y optimización, permite a los usuarios organizar entradas con categorías y
