@@ -84,12 +84,14 @@ const Cuerpo = ({ name }) => {
         <div className="container row">
             <div className='container col-12 col-lg-6' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '600px', fontFamily: "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" }}>
                 <div>
-                    <h1 style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif' }}>Bienvenido {name ? name : 'Usuario'} a SLA BLOG</h1>
-                    <button className="btn btn-primary" onClick={Formulario}>
-                        Crear Blog
+                    <h1 style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>Bienvenido {name ? name : 'Usuario'} a SLA BLOG</h1>
+                    <button style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)', backgroundColor: 'transparent', color: '#ffffff', border: '2px solid #ffffff', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)' }} className="btn btn-primary" onClick={Formulario}>
+                    Crear Blog +
                     </button>
+
+
                 </div>
-                <div className='container' style={{ color: '#000', fontFamily: 'Arial', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
+                <div className='container' style={{ color: '#001', fontFamily: 'Times New Roman', textShadow: '1px 1px 2px rgba(1, 1, 1, 0s.0)' }}>
                 El proyecto SLA BLOG hecho por estudiantes de la Universidad UNEMI es una plataforma diseñada para la creación
                 y gestión eficiente de blogs, facilitando la publicación de contenidos mediante un editor visual intuitivo,
                 con enfoque en la personalización y optimización, permite a los usuarios organizar entradas con categorías y
