@@ -32,7 +32,7 @@ const Cuerpo = ({ name }) => {
         Swal.fire({
             title: 'Estructura Del Blog',
             confirmButtonText: "Crear Blog",
-            confirmButtonColor: "green",
+            confirmButtonColor: "black",
             html: `
                 <style>
                     #swal2-html-container {
