@@ -85,7 +85,7 @@ const Cuerpo = ({ name }) => {
             <div className='container col-12 col-lg-6' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '600px', fontFamily: "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" }}>
                 <div>
                     <h1 style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>Bienvenido {name ? name : 'Usuario'} a SLA BLOG</h1>
-                    <button style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)', backgroundColor: 'transparent', color: '#ffffff', border: '2px solid #ffffff', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)' }} className="btn btn-primary" onClick={Formulario}>
+                    <button style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)', backgroundColor: 'transparent', color: '#ffffff', border: 'transparent', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)' }} className="btn btn-primary" onClick={Formulario}>
                     Crear Blog +
                     </button>
 
