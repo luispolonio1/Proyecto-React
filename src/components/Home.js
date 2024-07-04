@@ -30,7 +30,7 @@ return (
           <Route path="/noticias" element={<Noticia />} />
           </Routes>
         </div>
-        <hr />
+        <hr/>
         <Footer />
       </div>
     </>
