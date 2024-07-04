@@ -32,7 +32,7 @@ return (
             <h1 className="text-center mb-4">Iniciar Sesión</h1>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
-                <label htmlFor="username" className="form-label">Usuario</label>
+                <label htmlFor="username" className="form-label"style={{color:'white'}}>Usuario</label>
                 <input
                 type="text"
                 className="form-control"
@@ -42,7 +42,7 @@ return (
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="password" className="form-label">Contraseña</label>
+                <label htmlFor="password" className="form-label" style={{color:'white'}}>Contraseña</label>
                 <input
                 type="password"
                 className="form-control"
