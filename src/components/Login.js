@@ -8,7 +8,7 @@ const [localUsername, setLocalUsername] = useState('');
 const [password, setPassword] = useState('');
 const navigate = useNavigate();
 
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setUsername(localUsername);
     navigate('/home');
@@ -52,8 +52,8 @@ return (
                 />
               </div>
               <div className="d-grid gap-2 col-6 mx-auto">
-              <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
-              </div>
+              <button type="submit" className="btn btn-outline-secondary">Iniciar Sesión</button>
+            </div>
             </form>
           </div>
         </div>
