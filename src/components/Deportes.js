@@ -15,7 +15,7 @@ const Deporte = () => {
     const deportesBlogs = blogs.filter(blog => blog.Categoria == 'Deportes')
 
     return (
-        <div className="container-fluid mt-5">
+        <div className="container-fluid" style={{height:'600px'}}>
             {deportesBlogs.length == 0 ? (
                 <div className="text-center" style={{ height: '600px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <h1 className="display-1" style={{ color: '#555' }}>Aún está vacío</h1>
