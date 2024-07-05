@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../estilos.css'
 export const Footer =()=>{
-return (<div className="container-fluid col-12 espaciosdiv2">
+return (<div className="container-fluid col-12 py-4 espaciosdiv2">
     <footer className="row row-cols-1  row-cols-md-3 ">
         <div className="col mb-4">
             <h5 style={{ color: '#fff', fontFamily: 'Garamond', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }} >Secciones</h5>

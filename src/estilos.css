@@ -29,12 +29,14 @@
     color: #fff
  }
 
- .borderHover:hover{
-    outline: solid 2px rgb(58, 61, 66);
-    background-color:rgb(129, 149, 178) ;
+ .borderHover:hover {
+    outline: none;
+    background-color: rgb(58, 58, 58);
     color: black;
     border-radius: 9px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Sombra */
 }
+
 .borderHover{
    border-radius: 9px;
     margin:10px;
@@ -65,3 +67,5 @@
     color:white;
     text-decoration:none;
 }
+
+
