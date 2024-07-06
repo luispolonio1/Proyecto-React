@@ -94,16 +94,16 @@ return (
 ) : (
         blogsel ? (
         <div className="container">
-        <button style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)', backgroundColor: 'transparent', color: '#fff', border: 'transparent', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)', marginRight: '15px' }} className="btn btn-primary mb-3" onClick={() => setblogsel(null)}>Volver</button>
+        <button className="btn btn-primary mb-3" onClick={() => setblogsel(null)}>Volver<i class="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
         <h1 style={{ fontFamily: 'Times New Roman', color: 'white' }}>{blogsel.Titulo}</h1>
         <img src={blogsel.Imagen} alt={blogsel.Titulo} style={{ height: '250px', width: '450px' }} />
         <p style={{ fontFamily: 'Times New Roman', color: 'white' }}>{blogsel.Informacion}</p>
-        <button style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)', backgroundColor: 'transparent', color: '#fff', border: 'transparent', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)', marginRight: '15px' }} className="btn btn-primary mb-3" onClick={editarblog}>Editar Blog</button>
-        <button style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)', backgroundColor: 'transparent', color: '#fff', border: 'transparent', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)', marginRight: '15px' }} className="btn btn-danger mb-3" onClick={borrarblog}>Eliminar Blog</button>
+        <button style={{margin:'5px'}} className="btn btn-primary mb-3" onClick={editarblog}>Editar Blog</button>
+        <button style={{margin:'5px'}} className="btn btn-danger mb-3" onClick={borrarblog}>Eliminar Blog</button>
 
 
 <div className="mt-4">
-        <h3 style={{ fontFamily: 'Times New Roman', color: 'white' }}>Comentarios</h3>
+        <h3 style={{ fontFamily: 'Times New Roman', color: 'white' }}>Comentarios <i class="bi bi-chat-left-dots-fill"></i></h3>
         <div className="mb-3">
         <textarea
         className="form-control"
@@ -112,7 +112,7 @@ return (
         onChange={(e) => setcomentario(e.target.value)}>
         </textarea> 
 
-        <button style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)', backgroundColor: 'transparent', color: '#fff', border: 'transparent', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)', marginRight: '15px' }} className="btn btn-primary mt-2" onClick={agregarcomen}>Agregar Comentario</button>
+        <button className="btn btn-primary mt-2" onClick={agregarcomen}>Agregar Comentario</button>
         </div>
         {comentarios.length == 0 ? (
         <p style={{ fontFamily: 'Times New Roman', color: 'white' }}>No hay comentarios aún</p>
@@ -134,8 +134,12 @@ return (
         <div className="col" key={index}>
         <div className="card" style={{ background: 'rgba(0, 0, 0, 0.1)', height: '220px' }} onClick={() => setblogsel(blog)}>
         <img src={blog.Imagen} className="card-img-top" alt={blog.Titulo} style={{ height: '170px', width: '298px' }} />
-        <div className="card-body">
-        <h4 className="card-title" style={{ fontFamily: 'Times New Roman', color: 'white' }}>{blog.Titulo}</h4>
+        <div className="card-body" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+        <h4 className="card-title" style={{ fontFamily: 'Times New Roman', color: 'white'}}>{blog.Titulo}</h4>
+        <div>
+        <i class="bi bi-hand-thumbs-up" style={{fontSize:'25px',margin:'2.5px'}}></i>
+        <i class="bi bi-hand-thumbs-down" style={{fontSize:'25px',margin:'2.5px'}}></i>
+        </div>
        </div>
       </div>
     </div>

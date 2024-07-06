@@ -32,7 +32,7 @@ const Cuerpo = ({ name }) => {
         Swal.fire({
             title: 'Estructura Del Blog',
             confirmButtonText: "Crear Blog",
-            confirmButtonColor: "black",
+            confirmButtonColor: "blue",
             html: `
                 <style> #swal2-html-container { overflow-x: hidden !important; } </style>
                 <label for="Categoria" style='width: 100%; text-align: center; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif; font-size: 16px;'>Categoría Del Blog:</label> <select id="Categoria" class="swal2-input" style='width: 100%; margin: 10px 0; border-radius: 5px; text-align: center; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;'>
@@ -76,8 +76,8 @@ const Cuerpo = ({ name }) => {
         <div className="container row">
             <div className='container col-12 col-lg-6' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '600px', fontFamily: "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" }}>
                 <div>
-                    <h1 style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>Bienvenido {name ? name : 'Usuario'} a SLA BLOG</h1>
-                    <button style={{ fontFamily: 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)', backgroundColor: 'transparent', color: '#ffffff', border: 'transparent', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)' }} className="btn btn-primary" onClick={Formulario}>
+                    <h1 style={{color:'white'}}>Bienvenido {name ? name : 'Usuario'} a SLA BLOG</h1>
+                    <button  className="btn btn-primary" onClick={Formulario}>
                     Crear Blog +
                     </button>
 

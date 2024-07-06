@@ -8,6 +8,7 @@ import Tecnologia from './Tecnologias';
 import Noticia from './Noticias';
 import { Footer } from './Footer';
 import hhhh7 from '../assets/img/hhhh7.jpg';
+import '../estilos.css'
 
 const Home = ({ username }) => {
 return (
@@ -16,7 +17,7 @@ return (
     <div
       style={{
         backgroundImage: `url(${hhhh7})`,
-        backgroundAttachment: 'fixed', 
+        backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: 'calc(100vh - 64px)',
