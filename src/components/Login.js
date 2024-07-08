@@ -39,10 +39,12 @@ return (
         <label htmlFor="username" className="letra2 form-label" style={{color:'white'}}>Usuario</label>
         <input
         type="text"
-        className="form-control"
-      id="username"
-      value={localUsername}
-    onChange={(e) => setLocalUsername(e.target.value)}/>
+          className="form-control"
+          id="username"
+         value={localUsername}
+         onChange={(e) => setLocalUsername(e.target.value)}
+         required
+         />
     </div>
     <div className="mb-3">
       <label htmlFor="password" className="letra2 form-label" style={{color:'white'}}>Contraseña</label>
@@ -52,6 +54,7 @@ return (
         id="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        required
       />
   </div>
     <div className="d-grid gap-2 col-6 mx-auto">
