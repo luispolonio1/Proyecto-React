@@ -25,34 +25,34 @@ useEffect(() => {
 }
 }, [blogsel]);
 
-const deportblog = blogs.filter(blog => blog.Categoria == 'Deportes')
+const deportblog = blogs.filter(blog => blog.Categoria === 'Deportes')
 const editarblog = () => {
     Swal.fire({
     title: '<span style="color: #000; font-family: \'Trebuchet MS\', \'Lucida Sans Unicode\', \'Lucida Grande\', \'Lucida Sans\', Arial, sans-serif;">Editar Blog</span>',
     confirmButtonColor: '#000',
     confirmButtonText: '<span style="font-family: \'Trebuchet MS\', \'Lucida Sans Unicode\', \'Lucida Grande\', \'Lucida Sans\', Arial, sans-serif;">Guardar Cambios</span>',
-    html: `<label for="editartitu" style='width: 100%; text-align: center; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif; font-size: 16px;'> Título:</label> <input type="text" id="editartitu" class="swal2-input" style='width: 100%; margin: 10px 0; border-radius: 5px; text-align: center;' value="${blogsel.Titulo}"> <textarea id="editinfo" class="swal2-input" placeholder="Información del Blog" style='width:100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px;'>${blogsel.Informacion}</textarea>`,
+    html: `<label for="editartitu" style='width: 100%; text-align: center; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif; font-size: 16px;'> Título:</label> <input type="text" id="editartitu" class="swal2-input" style='width: 100%; margin: 10px 0; border-radius: 5px; text-align: center;' value="${blogsel.Titulo}"> <textarea id="editinfo" class="swal2-input" placeholder="Información del Blog" style='width:100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px;'>${blogsel.Informacion.join('/')}</textarea>`,
     focusConfirm: false,
-     preConfirm: () => {
+    preConfirm: () => {
         const editartitu = document.getElementById('editartitu').value;
-        const editinfo = document.getElementById('editinfo').value;
+        const editinfo = document.getElementById('editinfo').value.split('/');
         if (!editartitu || !editinfo) {
         Swal.showValidationMessage('Rellena todos los campos vacíos')
         return false;
         }
         return { editartitu, editinfo };
-        }
+    }
     }).then((result) => {
         if (result.isConfirmed) {
             const { editartitu, editinfo } = result.value;
-            const ediblog = { ...blogsel, Titulo: editartitu, Informacion: editinfo }
-            const guarblog = blogs.map(blog => (blog == blogsel ? ediblog : blog))
+            const ediblog = { ...blogsel, Titulo: editartitu, Informacion: editinfo };
+            const guarblog = blogs.map(blog => (blog === blogsel ? ediblog : blog));
             setblogs(guarblog);
             localStorage.setItem('blogs', JSON.stringify(guarblog));
-            Swal.fire({ title: 'Blog Actualizado', icon: 'success', timer: 1500, showConfirmButton: false })
-            }
-        });
-    };
+            Swal.fire({ title: 'Blog Actualizado', icon: 'success', timer: 1500, showConfirmButton: false });
+        }
+    });
+};
 
 const borrarblog = () => {
     Swal.fire({
@@ -88,25 +88,27 @@ setcomentario('');};
 
 return (
 <div className="container-fluid" style={{ minHeight: '600px'}}>
-    {deportblog.length == 0 ? (
+    {deportblog.length === 0 ? (
     <div className="text-center" style={{ height: '600px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <h1 className="display-1" style={{ color: '#555' }}>Aún está vacío</h1>
         </div>
 ) : (
         blogsel ? (
         <div className="container">
-        <button className="mi-stil btn btn-primary mb-3 alsi" onClick={() => setblogsel(null)}>Volver<i class="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
+        <button className="mi-stil btn  mb-3 alsi" onClick={() => setblogsel(null)}>Volver<i className="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
         <h1 className="mi-tit" >{blogsel.Titulo}</h1>
         <img src={blogsel.Imagen} alt={blogsel.Titulo} style={{ height: '250px', width: '450px' }} />
-        <p style={{fontSize: '19px'}} className="mi-tit" >{blogsel.Informacion}</p>
+        {blogsel.Informacion.map((parrafo, index) => (
+            <p style={{color:'white'}} key={index}>{parrafo}</p>
+        ))}
     
     <div style={{ marginTop: '120px'}}>
-        <button  className="mi-stil btn btn-primary mb-3 alsi" onClick={editarblog}>Editar Blog</button>
-        <button  className="mi-stil btn btn-primary mb-3 alsi" onClick={borrarblog}>Eliminar Blog</button>
+        <button  className="mi-stil btn  mb-3 alsi" onClick={editarblog}>Editar Blog</button>
+        <button  className="mi-stil btn  mb-3 alsi" onClick={borrarblog}>Eliminar Blog</button>
     </div>
 
 <div className="mt-4">
-        <h3 style={{  textShadow: '2px 2px 2px rgba(2, 2, 2, 2)', fontFamily: 'Times New Roman', color: 'white' }}>Comentarios <i class="bi bi-chat-left-dots-fill"></i></h3>
+        <h3 style={{  textShadow: '2px 2px 2px rgba(2, 2, 2, 2)', fontFamily: 'Times New Roman', color: 'white' }}>Comentarios <i className="bi bi-chat-left-dots-fill"></i></h3>
         <div className="mb-3">
         <textarea
         className="form-control"
@@ -115,9 +117,9 @@ return (
         onChange={(e) => setcomentario(e.target.value)}>
         </textarea> 
 
-        <button className="asl btn btn-primary mt-2 alsi" onClick={agregarcomen}>Agregar Comentario</button>
+        <button className="asl btn  mt-2 alsi" onClick={agregarcomen}>Agregar Comentario</button>
         </div>
-        {comentarios.length == 0 ? (
+        {comentarios.length === 0 ? (
         <p style={{ fontFamily: 'Helvetica Neue', color: 'white' }}>No hay comentarios aún</p>
 ) : (
         comentarios.map((comentario, index) => (

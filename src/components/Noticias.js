@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Swal from 'sweetalert2';
-import '../estilos.css';
-
 
 const Noticias = () => {
 const [blogs, setBlogs] = useState([])
@@ -11,7 +9,7 @@ const [comentario, setcomen] = useState('')
 const [comentarios, setcomentarios] = useState([])
 
 useEffect(() => {
-        const savedBlogs = localStorage.getItem('blogs')
+const savedBlogs = localStorage.getItem('blogs')
 if (savedBlogs) {
 setBlogs(JSON.parse(savedBlogs));}}, []);
 
@@ -31,8 +29,9 @@ const editarBlog = () => {
         confirmButtonColor: '#000',
         confirmButtonText: '<span style="font-family: \'Trebuchet MS\', \'Lucida Sans Unicode\', \'Lucida Grande\', \'Lucida Sans\', Arial, sans-serif;">Guardar Cambios</span>', 
         html: `<label for="editartitu" style='width: 100%; text-align: center; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif; font-size: 16px;'> Título:</label> <input type="text" id="editartitu" class="swal2-input" style='width: 100%; margin: 10px 0; border-radius: 5px; text-align: center;' value="${blogsel.Titulo}"> <textarea id="editinfo" class="swal2-input" placeholder="Información del Blog" style='width:100%; margin-top: 10px; margin-bottom: 10px; border-radius: 5px;'>${blogsel.Informacion}</textarea>`,
-        focusConfirm: false, preConfirm: () => { const editartitu = document.getElementById('editartitu').value;
-        const editinfo = document.getElementById('editinfo').value;
+        focusConfirm: false, 
+        preConfirm: () => { const editartitu = document.getElementById('editartitu').value;
+        const editinfo = document.getElementById('editinfo').value.split('/');
         if (!editartitu || !editinfo) {
         Swal.showValidationMessage('Rellena todos los campos vacios')
         return false;
@@ -92,26 +91,28 @@ return (
 
 (blogsel ? (
     <div className="container">
-          <button className="mi-stil btn btn-primary mb-3 alsi" onClick={() => setblogsel(null)}>Volver<i class="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
-          <h1 className="mi-tit" >{blogsel.Titulo}</h1>
+          <button  className="btn btn-primary mb-3" onClick={() => setblogsel(null)}>Volver<i class="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
+          <h1 style={{ fontFamily: 'Times New Roman', color: 'white' }}>{blogsel.Titulo}</h1>
           <img src={blogsel.Imagen} alt={blogsel.Titulo} style={{ height: '250px', width: '450px' }} />
-          <p style={{fontSize: '19px'}} className="mi-tit" >{blogsel.Informacion}</p>
-          <div style={{ marginTop: '120px'}}>
-          <button className="mi-stil btn btn-primary mb-3 alsi" onClick={editarBlog}>Editar Blog</button>
-          <button className="mi-stil btn btn-primary mb-3 alsi" onClick={borrarblog}>Eliminar Blog</button>
-    </div>
+          {blogsel.Informacion.map((parrafo, index) => (
+            <p style={{color:'white'}} key={index}>{parrafo}</p>
+        ))}
 
+          <button style={{margin:'5px'}} className="btn btn-primary mb-3" onClick={editarBlog}>Editar Blog</button>
+          <button style={{margin:'5px'}} className="btn btn-danger mb-3" onClick={borrarblog}>Eliminar Blog</button>
+
+{/* pilas muchachos esta es la parte de los comentarios */}
     <div className="mt-4">
-      <h3 style={{  textShadow: '2px 2px 2px rgba(2, 2, 2, 2)' ,fontFamily: 'Times New Roman', color: 'white' }}>Comentarios <i class="bi bi-chat-left-dots-fill"></i></h3>
+      <h3 style={{ fontFamily: 'Times New Roman', color: 'white' }}>Comentarios <i class="bi bi-chat-left-dots-fill"></i></h3>
        <div className="mb-3">
     <textarea
        className="form-control" 
-       style={{ fontFamily: "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" }}
        placeholder="Añadir comentario" 
        value={comentario} 
        onChange={(e) => setcomen(e.target.value)} ></textarea>
 
-    <button  className="asl btn btn-primary mt-2 alsi" onClick={agregarcomen}>Agregar Comentario</button>
+{/*aqui esta el boton de agregar comentario por si quieren cambiarle el diseño o el color*/}
+    <button className="btn btn-primary mt-2" onClick={agregarcomen}>Agregar Comentario</button>
  </div>
     {comentarios.length == 0 ? (
       <p style={{ fontFamily: 'Times New Roman', color: 'white' }}>No hay comentarios aún</p> ) : ( 
