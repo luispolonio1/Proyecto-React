@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Swal from 'sweetalert2';
+import '../estilos.css';
 
 const Deporte = () => {
 const [blogs, setblogs] = useState([])
@@ -94,16 +95,18 @@ return (
 ) : (
         blogsel ? (
         <div className="container">
-        <button className="btn btn-primary mb-3" onClick={() => setblogsel(null)}>Volver<i class="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
-        <h1 style={{ fontFamily: 'Times New Roman', color: 'white' }}>{blogsel.Titulo}</h1>
+        <button className="mi-stil btn btn-primary mb-3 alsi" onClick={() => setblogsel(null)}>Volver<i class="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
+        <h1 className="mi-tit" >{blogsel.Titulo}</h1>
         <img src={blogsel.Imagen} alt={blogsel.Titulo} style={{ height: '250px', width: '450px' }} />
-        <p style={{ fontFamily: 'Times New Roman', color: 'white' }}>{blogsel.Informacion}</p>
-        <button style={{margin:'5px'}} className="btn btn-primary mb-3" onClick={editarblog}>Editar Blog</button>
-        <button style={{margin:'5px'}} className="btn btn-danger mb-3" onClick={borrarblog}>Eliminar Blog</button>
-
+        <p style={{fontSize: '19px'}} className="mi-tit" >{blogsel.Informacion}</p>
+    
+    <div style={{ marginTop: '120px'}}>
+        <button  className="mi-stil btn btn-primary mb-3 alsi" onClick={editarblog}>Editar Blog</button>
+        <button  className="mi-stil btn btn-primary mb-3 alsi" onClick={borrarblog}>Eliminar Blog</button>
+    </div>
 
 <div className="mt-4">
-        <h3 style={{ fontFamily: 'Times New Roman', color: 'white' }}>Comentarios <i class="bi bi-chat-left-dots-fill"></i></h3>
+        <h3 style={{  textShadow: '2px 2px 2px rgba(2, 2, 2, 2)', fontFamily: 'Times New Roman', color: 'white' }}>Comentarios <i class="bi bi-chat-left-dots-fill"></i></h3>
         <div className="mb-3">
         <textarea
         className="form-control"
@@ -112,10 +115,10 @@ return (
         onChange={(e) => setcomentario(e.target.value)}>
         </textarea> 
 
-        <button className="btn btn-primary mt-2" onClick={agregarcomen}>Agregar Comentario</button>
+        <button className="asl btn btn-primary mt-2 alsi" onClick={agregarcomen}>Agregar Comentario</button>
         </div>
         {comentarios.length == 0 ? (
-        <p style={{ fontFamily: 'Times New Roman', color: 'white' }}>No hay comentarios aún</p>
+        <p style={{ fontFamily: 'Helvetica Neue', color: 'white' }}>No hay comentarios aún</p>
 ) : (
         comentarios.map((comentario, index) => (
         <div key={index} className="card mb-2" style={{ background: 'rgba(0, 0, 0, 0.1)' }}>
@@ -136,10 +139,6 @@ return (
         <img src={blog.Imagen} className="card-img-top" alt={blog.Titulo} style={{ height: '170px', width: '298px' }} />
         <div className="card-body" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
         <h4 className="card-title" style={{ fontFamily: 'Times New Roman', color: 'white'}}>{blog.Titulo}</h4>
-        <div>
-        <i class="bi bi-hand-thumbs-up" style={{fontSize:'25px',margin:'2.5px'}}></i>
-        <i class="bi bi-hand-thumbs-down" style={{fontSize:'25px',margin:'2.5px'}}></i>
-        </div>
        </div>
       </div>
     </div>

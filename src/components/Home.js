@@ -34,7 +34,6 @@ return (
       <Route path="/noticias" element={<Noticia />} />
     </Routes>
    </div>
-<hr />
   <Footer />
   </div>
  </>

@@ -10,9 +10,9 @@ import hy3 from '../assets/img/hy3.jpg'
 
 
 const Cuerpo = ({ name }) => {
-    const { blogs, setBlogs } = useContext(ContextoBlog);
+     const { blogs, setBlogs } = useContext(ContextoBlog);
 
-    useEffect(() => {
+useEffect(() => {
         const savedBlogs = localStorage.getItem('blogs');
         if (savedBlogs) {
             setBlogs(JSON.parse(savedBlogs));
@@ -32,7 +32,7 @@ const Cuerpo = ({ name }) => {
         Swal.fire({
             title: 'Estructura Del Blog',
             confirmButtonText: "Crear Blog",
-            confirmButtonColor: "blue",
+            confirmButtonColor: "black",
             html: `
                 <style> #swal2-html-container { overflow-x: hidden !important; } </style>
                 <label for="Categoria" style='width: 100%; text-align: center; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif; font-size: 16px;'>Categoría Del Blog:</label> <select id="Categoria" class="swal2-input" style='width: 100%; margin: 10px 0; border-radius: 5px; text-align: center; font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;'>
@@ -76,14 +76,14 @@ const Cuerpo = ({ name }) => {
         <div className="container row">
             <div className='container col-12 col-lg-6' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '600px', fontFamily: "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" }}>
                 <div>
-                    <h1 style={{color:'white'}}>Bienvenido {name ? name : 'Usuario'} a SLA BLOG</h1>
-                    <button  className="btn btn-primary" onClick={Formulario}>
+                    <h1 className='uyr'>Bienvenido {name ? name : 'Usuario'} a SLA BLOG</h1>
+                    <button className="mi-stil btn btn-primary alsi" onClick={Formulario}>
                     Crear Blog +
                     </button>
 
 
                 </div>
-                <div className='container' style={{ color: '#fff', fontFamily: 'Times New Roman', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
+                <div style={{fontSize: '18px'}}className='uyr container' >
                 El proyecto SLA BLOG hecho por estudiantes de la Universidad UNEMI es una plataforma diseñada para la creación
                 y gestión eficiente de blogs, facilitando la publicación de contenidos mediante un editor visual intuitivo,
                 con enfoque en la personalización y optimización, permite a los usuarios organizar entradas con categorías y
