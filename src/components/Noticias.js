@@ -75,6 +75,8 @@ const borrarblog = () => {
        };
     });
 };
+
+
 const agregarcomen = () => {
 const nuevocomen = { id: comentarios.length + 1, texto: comentario, autor: 'Usuario' }
 setcomentarios([...comentarios, nuevocomen]);
@@ -91,16 +93,16 @@ return (
 
 (blogsel ? (
     <div className="container">
-          <button  className="btn btn-primary mb-3" onClick={() => setblogsel(null)}>Volver<i class="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
+          <button  className="mi-stil btn btn-dark mb-3 alsi" onClick={() => setblogsel(null)}>Volver<i class="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
           <h1 style={{ fontFamily: 'Times New Roman', color: 'white' }}>{blogsel.Titulo}</h1>
           <img src={blogsel.Imagen} alt={blogsel.Titulo} style={{ height: '250px', width: '450px' }} />
           {blogsel.Informacion.map((parrafo, index) => (
-            <p style={{color:'white'}} key={index}>{parrafo}</p>
+            <p  className="mi-tit"  key={index}>{parrafo}</p>
         ))}
-
-          <button style={{margin:'5px'}} className="btn btn-primary mb-3" onClick={editarBlog}>Editar Blog</button>
-          <button style={{margin:'5px'}} className="btn btn-danger mb-3" onClick={borrarblog}>Eliminar Blog</button>
-
+  <div style={{ marginTop: '120px'}}>
+          <button style={{margin:'5px'}} className="mi-stil btn btn-dark mb-3 alsi" onClick={editarBlog}>Editar Blog</button>
+          <button style={{margin:'5px'}} className="mi-stil btn btn-dark mb-3 alsi" onClick={borrarblog}>Eliminar Blog</button>
+          </div>
 {/* pilas muchachos esta es la parte de los comentarios */}
     <div className="mt-4">
       <h3 style={{ fontFamily: 'Times New Roman', color: 'white' }}>Comentarios <i class="bi bi-chat-left-dots-fill"></i></h3>
@@ -112,7 +114,7 @@ return (
        onChange={(e) => setcomen(e.target.value)} ></textarea>
 
 {/*aqui esta el boton de agregar comentario por si quieren cambiarle el diseño o el color*/}
-    <button className="btn btn-primary mt-2" onClick={agregarcomen}>Agregar Comentario</button>
+    <button className="mi-stil btn btn-dark mt-2 alsi" onClick={agregarcomen}>Agregar Comentario</button>
  </div>
     {comentarios.length == 0 ? (
       <p style={{ fontFamily: 'Times New Roman', color: 'white' }}>No hay comentarios aún</p> ) : ( 

@@ -95,16 +95,16 @@ return (
 ) : (
         blogsel ? (
         <div className="container">
-        <button className="mi-stil btn  mb-3 alsi" onClick={() => setblogsel(null)}>Volver<i className="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
+        <button className="mi-stil btn btn-dark mb-3 alsi" onClick={() => setblogsel(null)}>Volver<i className="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
         <h1 className="mi-tit" >{blogsel.Titulo}</h1>
         <img src={blogsel.Imagen} alt={blogsel.Titulo} style={{ height: '250px', width: '450px' }} />
         {blogsel.Informacion.map((parrafo, index) => (
-            <p style={{color:'white'}} key={index}>{parrafo}</p>
+            <p className="mi-tit"  key={index}>{parrafo}</p>
         ))}
     
     <div style={{ marginTop: '120px'}}>
-        <button  className="mi-stil btn  mb-3 alsi" onClick={editarblog}>Editar Blog</button>
-        <button  className="mi-stil btn  mb-3 alsi" onClick={borrarblog}>Eliminar Blog</button>
+        <button  className="mi-stil btn btn-dark mb-3 alsi" onClick={editarblog}>Editar Blog</button>
+        <button  className="mi-stil btn btn-dark mb-3 alsi" onClick={borrarblog}>Eliminar Blog</button>
     </div>
 
 <div className="mt-4">
@@ -117,7 +117,7 @@ return (
         onChange={(e) => setcomentario(e.target.value)}>
         </textarea> 
 
-        <button className="asl btn  mt-2 alsi" onClick={agregarcomen}>Agregar Comentario</button>
+        <button className="asl btn btn-dark mt-2 alsi" onClick={agregarcomen}>Agregar Comentario</button>
         </div>
         {comentarios.length === 0 ? (
         <p style={{ fontFamily: 'Helvetica Neue', color: 'white' }}>No hay comentarios aún</p>

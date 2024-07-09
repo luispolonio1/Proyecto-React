@@ -100,16 +100,16 @@ return (
 ) : (
     blogsel ? (
         <div className="container">
-          <button className="mi-stil btn  mb-3 alsi" onClick={() => setblogsel(null)}>Volver <i class="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
+          <button className="mi-stil btn btn-dark mb-3 alsi" onClick={() => setblogsel(null)}>Volver <i class="bi bi-arrow-counterclockwise" style={{marginLeft:'5px'}}></i></button>
           <h1 className="mi-tit" >{blogsel.Titulo}</h1>
           <img src={blogsel.Imagen} alt={blogsel.Titulo} style={{ height: '250px', width: '450px' }} />
           {blogsel.Informacion.map((parrafo, index) => (
-            <p style={{color:'white'}} key={index}>{parrafo}</p>
+            <p className="mi-tit" key={index}>{parrafo}</p>
         ))}
 
           <div style={{ marginTop: '120px'}}>
-          <button  className="mi-stil btn  mb-3 alsi" onClick={editarblog}>Editar Blog</button>
-          <button  className="mi-stil btn  mb-3 alsi" onClick={() => borrarblog(blogsel)}>Eliminar Blog</button>
+          <button  className="mi-stil btn btn-dark mb-3 alsi" onClick={editarblog}>Editar Blog</button>
+          <button  className="mi-stil btn btn-dark mb-3 alsi" onClick={() => borrarblog(blogsel)}>Eliminar Blog</button>
           </div>
 <div className="mt-4">
       <h3 style={{  textShadow: '2px 2px 2px rgba(2, 2, 2, 2)' , fontFamily: 'Times New Roman', color: 'white' }}>Comentarios <i class="bi bi-chat-left-dots-fill"></i></h3>
@@ -121,7 +121,7 @@ return (
       onChange={(e) => setcomen(e.target.value)}>
 </textarea>
       
-    <button  className="asl btn  mt-2 alsi" onClick={agregarcomen}>Agregar Comentario</button>
+    <button  className="mi-stil btn btn-dark mt-2 alsi" onClick={agregarcomen}>Agregar Comentario</button>
       </div>
       {comentarios.length == 0 ? (
       <p style={{ fontFamily: 'Times New Roman', color: 'white' }}>No hay comentarios aún</p>

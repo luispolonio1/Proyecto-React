@@ -80,7 +80,7 @@ const Cuerpo = ({ name }) => {
             <div className='container col-12 col-lg-6' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '600px', fontFamily: "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" }}>
                 <div>
                     <h1 className='uyr'>Bienvenido {name ? name : 'Usuario'} a SLA BLOG</h1>
-                    <button className="mi-stil btn  alsi" onClick={Formulario}>
+                    <button className="mi-stil btn btn-dark mb-3 alsi" onClick={Formulario}>
                         Crear Blog +
                     </button>
                 </div>

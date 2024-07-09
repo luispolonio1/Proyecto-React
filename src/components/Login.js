@@ -58,7 +58,7 @@ return (
       />
   </div>
     <div className="d-grid gap-2 col-6 mx-auto">
-        <button type="submit" style={{}}className="mi-stil btn alsi">Iniciar Sesión</button>
+        <button type="submit" className="mi-stil btn btn-dark alsi">Iniciar Sesión</button>
           </div>
         </form>
       </div>
